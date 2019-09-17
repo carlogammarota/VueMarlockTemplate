@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <NavBar></NavBar>
-    <Dash></Dash>
+    
+    <!-- <router-link to="/">Inicio</router-link>
+    <router-link to="tasks">Tareas</router-link> -->
+
+    <router-view></router-view>
+    <!-- <Dash></Dash> -->
   </div>
 </template>
 

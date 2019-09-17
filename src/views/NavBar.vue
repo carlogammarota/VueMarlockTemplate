@@ -27,7 +27,7 @@
 
 
 					<div class="block lg:hidden pr-4">
-					<button id="nav-toggle"   @click="menuOpen()" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
+					<button id="nav-toggle" @click="menuOpen()" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
 						<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
 					</button>
 				</div>
@@ -35,18 +35,25 @@
 
 			</div>
 
+         
 
-			<div v-show="menuVar" class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 bg-gray-900 z-20" id="nav-content">
+
+			<div v-show="menuVar" class="w-full flex-grow lg:flex lg:items-center w-1/2 pl-2 md:pl-0 lg:w-auto lg:block mt-2 lg:mt-0 bg-gray-900 z-20" id="nav-content">
 				<ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
-					<li class="mr-6 my-2 md:my-0">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline hover:text-gray-100 border-b-2 border-blue-400 hover:border-blue-400">
-                            <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
-                        </a>
+					<!-- <li class="mr-6 my-2 md:my-0">
+                        <router-link to="/" class="block py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline hover:text-gray-100  border-blue-400 hover:border-blue-400">
+                            <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-sm">Dashboard</span>
+                        </router-link>
+                    </li> -->
+                    <li class="mr-6 my-2 md:my-0">
+                        <router-link to="/" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-blue-400 ">
+                            <i class="fas fa-home fa-fw mr-3 text-blue-400"></i><span class="pb-1 md:pb-0 text-sm">Dashboard</span>
+                        </router-link>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+                        <router-link to="/tasks" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400 ">
                             <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Tasks</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="mr-6 my-2 md:my-0">
                         <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
@@ -77,9 +84,19 @@
 			</div>
 			
 		</div>
+          <!-- Narrower side column -->
+            <!-- <div class="flex mb-12">
+                <div class="w-3/12 bg-gray-500 h-12">
+                    2
+                </div>
+                <div class="w-8/12 bg-gray-400 h-12">
+                    3
+                </div>
+            </div> -->
 	</nav>
 </template>
 <script>
+import { isMobile } from 'mobile-device-detect';
     export default {
         data() {
             return {
@@ -93,6 +110,14 @@
             },
             userButton(){
                 this.userVar = !this.userVar
+            }
+        },
+        mounted(){
+            console.log(isMobile)
+            if (isMobile) {
+                this.menuVar = false
+            }else {
+                this.menuVar = true
             }
         }
     }

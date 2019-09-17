@@ -11,10 +11,14 @@
         extends: Radar,
         mounted () {
             this.renderChart({
-                labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+                 labels: [
+        'Red',
+        'Yellow',
+        'Blue'
+    ],
+                type: 'polarArea',
                 datasets: [{
                     data: [20, 10, 400],
-                    "type": "polarArea",
                     "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"],
                 } ],
             }
