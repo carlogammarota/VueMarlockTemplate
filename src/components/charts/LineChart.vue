@@ -24,7 +24,6 @@
                     "fill": false,
                     "borderColor": "rgb(54, 162, 235)"
                 }],
-                
             }
             , {responsive: true, maintainAspectRatio: false})
         }

@@ -108,7 +108,7 @@
                     <!--Graph Card-->
                     <div class="bg-gray-900 border border-gray-800 rounded shadow">
                         <div class="border-b border-gray-800 p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                            <h5 class="font-bold uppercase text-gray-600">Line Chart</h5>
                         </div>
                         <div class="p-5">
                             <lineChart></lineChart>
@@ -154,7 +154,8 @@
                             <h5 class="font-bold uppercase text-gray-600">Graph</h5>
                         </div>
                         <div class="p-5">
-                            <canvas id="chartjs-0" class="chartjs" width="undefined" height="undefined"></canvas>
+                        <radar></radar>
+                            <!-- <canvas id="chartjs-0" class="chartjs" width="undefined" height="undefined"></canvas> -->
                             <!-- <script>
                                 new Chart(document.getElementById("chartjs-0"), {
                                     "type": "line",
@@ -180,10 +181,11 @@
                     <!--Graph Card-->
                     <div class="bg-gray-900 border border-gray-800 rounded shadow">
                         <div class="border-b border-gray-800 p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                            <h5 class="font-bold uppercase text-gray-600">3</h5>
                         </div>
                         <div class="p-5">
-                            <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
+                            <bar></bar>
+                            <!-- <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas> -->
                             <!-- <script>
                                 new Chart(document.getElementById("chartjs-1"), {
                                     "type": "bar",
@@ -218,7 +220,7 @@
                     <!--Graph Card-->
                     <div class="bg-gray-900 border border-gray-800 rounded shadow">
                         <div class="border-b border-gray-800 p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                            <h5 class="font-bold uppercase text-gray-600">Doughnut Chart</h5>
                         </div>
                         <div class="p-5">
                             <doughnut></doughnut>
@@ -290,10 +292,14 @@
 <script>
 import lineChart from '../components/charts/LineChart.vue'
 import doughnut from '../components/charts/Doughnut.vue'
+import bar from '../components/charts/Bar.vue'
+import radar from '../components/charts/Radar.vue'
     export default {
         components: {
             lineChart,
-            doughnut
+            doughnut,
+            bar,
+            radar
         }
     }
 </script>
