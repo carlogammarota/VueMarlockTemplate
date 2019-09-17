@@ -8,6 +8,9 @@ Vue.config.productionTip = false
 import '@/assets/css/tailwind.css'
 // Vue.use(Buefy)
 
+import VueCharts from 'vue-chartjs'
+import { Bar, Line } from 'vue-chartjs'
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
